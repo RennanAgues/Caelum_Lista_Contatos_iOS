@@ -6,6 +6,11 @@
 //  Copyright (c) 2015 Caelum. All rights reserved.
 //
 
+
+//Dicas para Servico
+//Thrift
+//Netty
+
 #import "AppDelegate.h"
 #import "ListaContatosViewController.h"
 
@@ -17,6 +22,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    //Criacao de navigation e referencia a primeira tela que sera acionada
     self.window = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen] bounds]];
     ListaContatosViewController *lista = [ListaContatosViewController new];
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:lista];

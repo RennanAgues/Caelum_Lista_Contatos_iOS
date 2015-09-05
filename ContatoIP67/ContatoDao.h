@@ -13,8 +13,17 @@
 
 @property (strong, readonly) NSMutableArray *listaContatos;
 
+//Variavel de instanciad da classe dao
 +(id) contatoDaoInstance;
 
--(void) AdicionaContato:(Contato *)contato;
+//Metodo para adicionar contato na lista de contatos
+-(void) adicionaContato:(Contato *)contato;
+
+//Metodo para remover contato da lista de contatos
+-(void) removeContato:(NSInteger)posicao;
+
+//Metodo para resgatar um contato a partir da posicao indicada
+-(Contato *) buscaContatoDaPosicao:(NSInteger) posicao;
+
 
 @end

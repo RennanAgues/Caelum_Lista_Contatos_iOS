@@ -10,8 +10,10 @@
 
 @implementation ContatoDao
 
+//Inicializacao da variavel de acesso ao Dao
 static ContatoDao *defaultDao = nil;
 
+//Metodo de inicializacao da classe
 -(id)init{
     self = [super init];
     if(self){
@@ -20,6 +22,7 @@ static ContatoDao *defaultDao = nil;
     return self;
 }
 
+//Metodo de recuperacao da instancia para acesso ao Dao
 +(id)contatoDaoInstance{
     if(!defaultDao){
         defaultDao = [ContatoDao new];
@@ -27,10 +30,27 @@ static ContatoDao *defaultDao = nil;
     return defaultDao;
 }
 
--(void) AdicionaContato:(Contato *)contato{
+//Metodo para adicao de um novo contato a lista de contatos
+-(void) adicionaContato:(Contato *)contato{
     [self.listaContatos addObject:contato];
     
     NSLog(@"Contatos : %@", self.listaContatos);
 }
+
+//Metodo para remover um novo contato da lista de contatos
+-(void) removeContato:(NSInteger)posicao{
+    [self.listaContatos removeObjectAtIndex:posicao];
+    
+    NSLog(@"Contatos : %@", self.listaContatos);
+}
+
+
+//Busca contato a partir da posicao indicada
+-(Contato *) buscaContatoDaPosicao:(NSInteger) posicao{
+    return self.listaContatos[posicao];
+}
+
+
+
 
 @end

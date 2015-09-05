@@ -17,14 +17,20 @@
 
 Contato * contato;
 
+//Metodo de inicializacao da classe quando ela é ligada a interface visual
 -(id) initWithCoder:(NSCoder *)aDecoder{
     self = [super initWithCoder:aDecoder];
     if(self){
+        //resgate da instacia para acesso ao Dao
         self.contatoDao = [ContatoDao contatoDaoInstance];
+        
+        //Titulo da View a partir do navigation
         self.navigationItem.title = @"Cadastro";
         
+        //Criacao de botao para adicao de um novo contato
         UIBarButtonItem * botaoAdicionaContato = [[UIBarButtonItem alloc] initWithTitle:@"Adiciona" style:UIBarButtonItemStylePlain target:self action:@selector(criaNovoContato)];
         
+        //inclusao de botao ao navigation
         self.navigationItem.rightBarButtonItem = botaoAdicionaContato;
     }
     return self;
@@ -40,13 +46,15 @@ Contato * contato;
     // Dispose of any resources that can be recreated.
 }
 
+//Criacao de um novo contato
 - (void)criaNovoContato {
     [self pegaDadosFormulario];
-    [self.contatoDao AdicionaContato:self.contato];
+    [self.contatoDao adicionaContato:self.contato];
     
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+//Resgata dados do formulario para insercao a lista
 - (void)pegaDadosFormulario{
     
     self.contato = [Contato new];
