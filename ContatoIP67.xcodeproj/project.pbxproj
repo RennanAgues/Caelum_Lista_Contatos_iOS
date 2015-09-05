@@ -16,6 +16,7 @@
 		917D81611B91EC780094394C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 917D815F1B91EC780094394C /* LaunchScreen.xib */; };
 		917D816D1B91EC780094394C /* ContatoIP67Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 917D816C1B91EC780094394C /* ContatoIP67Tests.m */; };
 		917D81781B920A700094394C /* Contato.m in Sources */ = {isa = PBXBuildFile; fileRef = 917D81771B920A700094394C /* Contato.m */; };
+		91BB08531B9B1DAD004A32CC /* ListaContatosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91BB08521B9B1DAD004A32CC /* ListaContatosViewController.m */; };
 		91C9640F1B92388500C9DC5B /* ContatoDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C9640E1B92388500C9DC5B /* ContatoDao.m */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +47,8 @@
 		917D816C1B91EC780094394C /* ContatoIP67Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContatoIP67Tests.m; sourceTree = "<group>"; };
 		917D81761B920A700094394C /* Contato.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Contato.h; sourceTree = "<group>"; };
 		917D81771B920A700094394C /* Contato.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Contato.m; sourceTree = "<group>"; };
+		91BB08511B9B1DAD004A32CC /* ListaContatosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListaContatosViewController.h; sourceTree = "<group>"; };
+		91BB08521B9B1DAD004A32CC /* ListaContatosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListaContatosViewController.m; sourceTree = "<group>"; };
 		91C9640D1B92388500C9DC5B /* ContatoDao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContatoDao.h; sourceTree = "<group>"; };
 		91C9640E1B92388500C9DC5B /* ContatoDao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContatoDao.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -102,6 +105,8 @@
 				917D814D1B91EC780094394C /* Supporting Files */,
 				917D81761B920A700094394C /* Contato.h */,
 				917D81771B920A700094394C /* Contato.m */,
+				91BB08511B9B1DAD004A32CC /* ListaContatosViewController.h */,
+				91BB08521B9B1DAD004A32CC /* ListaContatosViewController.m */,
 			);
 			path = ContatoIP67;
 			sourceTree = "<group>";
@@ -234,6 +239,7 @@
 			files = (
 				917D81781B920A700094394C /* Contato.m in Sources */,
 				917D81531B91EC780094394C /* AppDelegate.m in Sources */,
+				91BB08531B9B1DAD004A32CC /* ListaContatosViewController.m in Sources */,
 				917D81501B91EC780094394C /* main.m in Sources */,
 				91C9640F1B92388500C9DC5B /* ContatoDao.m in Sources */,
 				917D81591B91EC780094394C /* FormularioContatoViewController.m in Sources */,

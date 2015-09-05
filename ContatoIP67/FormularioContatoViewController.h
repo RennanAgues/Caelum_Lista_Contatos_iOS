@@ -17,9 +17,10 @@
 @property (weak, nonatomic) IBOutlet UITextField *endereco;
 @property (weak, nonatomic) IBOutlet UITextField *site;
 
-- (IBAction)pegaDadosFormulario:(UIButton *)sender;
+- (void)criaNovoContato;
 
-@property ContatoDao *contatoDao;
+@property (strong) ContatoDao *contatoDao;
+@property (strong) Contato *contato;
 
 @end
 

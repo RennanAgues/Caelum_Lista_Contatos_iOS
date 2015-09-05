@@ -21,6 +21,11 @@ Contato * contato;
     self = [super initWithCoder:aDecoder];
     if(self){
         self.contatoDao = [ContatoDao contatoDaoInstance];
+        self.navigationItem.title = @"Cadastro";
+        
+        UIBarButtonItem * botaoAdicionaContato = [[UIBarButtonItem alloc] initWithTitle:@"Adiciona" style:UIBarButtonItemStylePlain target:self action:@selector(criaNovoContato)];
+        
+        self.navigationItem.rightBarButtonItem = botaoAdicionaContato;
     }
     return self;
 }
@@ -35,18 +40,22 @@ Contato * contato;
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)pegaDadosFormulario:(UIButton *)sender {
+- (void)criaNovoContato {
+    [self pegaDadosFormulario];
+    [self.contatoDao AdicionaContato:self.contato];
     
-    contato = [Contato new];
-    
-    contato.nome     = self.nome.text;
-    contato.telefone = self.telefone.text;
-    contato.email    = self.email.text;
-    contato.endereco = self.endereco.text;
-    contato.site     = self.site.text;
-    
-    [self.contatoDao AdicionaContato:contato];
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
+- (void)pegaDadosFormulario{
+    
+    self.contato = [Contato new];
+    
+    self.contato.nome     = self.nome.text;
+    self.contato.telefone = self.telefone.text;
+    self.contato.email    = self.email.text;
+    self.contato.endereco = self.endereco.text;
+    self.contato.site     = self.site.text;
 }
 
 @end
