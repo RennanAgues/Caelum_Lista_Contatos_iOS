@@ -9,6 +9,15 @@
 #import <UIKit/UIKit.h>
 #import "ContatoDao.h"
 
+
+@protocol FormularioContatoViewControllerDelegate <NSObject>
+
+-(void) contatoAdicionado:(Contato *) contato;
+-(void) contatoAtualizado:(Contato *) contato;
+
+@end
+
+
 @interface FormularioContatoViewController : UIViewController
 
 
@@ -26,6 +35,9 @@
 
 //Armazenamento da variavel contato para uso na propria classe
 @property (strong) Contato *contato;
+
+//instancia do delegate que eu quero chamar
+@property (weak) id<FormularioContatoViewControllerDelegate> delegate;
 
 @end
 

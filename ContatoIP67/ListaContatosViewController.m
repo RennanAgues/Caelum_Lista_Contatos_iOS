@@ -31,9 +31,36 @@
         
         //Recupera instancia do dao
         self.dao = [ContatoDao contatoDaoInstance];
+        
+        self.linhaDestacada = -1;
     }
     
     return self;
+}
+
+-(void) viewWillAppear:(BOOL)animated{
+    [self.tableView reloadData];
+}
+
+-(void) viewDidAppear:(BOOL)animated{
+    if(self.linhaDestacada >= 0){
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:self.linhaDestacada inSection:0];
+        [self.tableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionNone];
+        
+        [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionNone animated:YES];
+        
+        self.linhaDestacada = -1;
+
+
+    }
+}
+
+-(void) viewDidLoad{
+    [super viewDidLoad];
+    
+    UILongPressGestureRecognizer * longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(exibirMaisAcoes:)];
+    
+    [self.tableView addGestureRecognizer:longPress];
 }
 
 //Metodo que aciona a tela de formulario do contato
@@ -44,6 +71,12 @@
     
     UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     FormularioContatoViewController *form = [storyBoard instantiateViewControllerWithIdentifier:@"Form-Contato"];
+    
+    form.delegate = self;
+    
+    if(self.contatoSelecionado){
+        form.contato = self.contatoSelecionado;
+    }
     
     //Redireciona para a Controller indicada
     [self.navigationController pushViewController:form animated:YES];
@@ -82,5 +115,38 @@
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }
 }
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    self.contatoSelecionado = [self.dao buscaContatoDaPosicao:indexPath.row];
+    
+    [self exibeFormulario];
+    self.contatoSelecionado = nil;
+}
+
+-(void) contatoAdicionado:(Contato *)contato{
+    self.linhaDestacada = [self.dao buscaPosicaoDoContato:contato];
+}
+
+-(void) contatoAtualizado:(Contato *)contato{
+    self.linhaDestacada = [self.dao buscaPosicaoDoContato:contato];
+}
+
+-(void) exibirMaisAcoes:(UIGestureRecognizer *)gesture{
+    if(gesture.state == UIGestureRecognizerStateBegan){
+        CGPoint ponto = [gesture locationInView:self.tableView];
+        
+        NSIndexPath *index = [self.tableView indexPathForRowAtPoint:ponto];
+        
+        if(index){
+        
+        self.contatoSelecionado = [self.dao buscaContatoDaPosicao:index.row];
+            
+            _gerenciador = [[GerenciadorDeAcoes alloc] initWithContato:self.contatoSelecionado];
+            [self.gerenciador acoesDoController:self];
+        }
+        
+    }
+}
+
 
 @end

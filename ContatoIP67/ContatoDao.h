@@ -25,5 +25,7 @@
 //Metodo para resgatar um contato a partir da posicao indicada
 -(Contato *) buscaContatoDaPosicao:(NSInteger) posicao;
 
+//Metodo para resgatar posicao do contato a partir do contato
+-(NSInteger) buscaPosicaoDoContato:(Contato *) contato;
 
 @end

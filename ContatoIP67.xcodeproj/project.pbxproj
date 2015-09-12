@@ -16,6 +16,8 @@
 		917D81611B91EC780094394C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 917D815F1B91EC780094394C /* LaunchScreen.xib */; };
 		917D816D1B91EC780094394C /* ContatoIP67Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 917D816C1B91EC780094394C /* ContatoIP67Tests.m */; };
 		917D81781B920A700094394C /* Contato.m in Sources */ = {isa = PBXBuildFile; fileRef = 917D81771B920A700094394C /* Contato.m */; };
+		919526871BA4A4420068FA52 /* GerenciadorDeAcoes.m in Sources */ = {isa = PBXBuildFile; fileRef = 919526861BA4A4420068FA52 /* GerenciadorDeAcoes.m */; };
+		919526891BA4BA9C0068FA52 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 919526881BA4BA9C0068FA52 /* MessageUI.framework */; };
 		91BB08531B9B1DAD004A32CC /* ListaContatosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91BB08521B9B1DAD004A32CC /* ListaContatosViewController.m */; };
 		91C9640F1B92388500C9DC5B /* ContatoDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C9640E1B92388500C9DC5B /* ContatoDao.m */; };
 /* End PBXBuildFile section */
@@ -47,6 +49,9 @@
 		917D816C1B91EC780094394C /* ContatoIP67Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContatoIP67Tests.m; sourceTree = "<group>"; };
 		917D81761B920A700094394C /* Contato.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Contato.h; sourceTree = "<group>"; };
 		917D81771B920A700094394C /* Contato.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Contato.m; sourceTree = "<group>"; };
+		919526851BA4A4420068FA52 /* GerenciadorDeAcoes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GerenciadorDeAcoes.h; sourceTree = "<group>"; };
+		919526861BA4A4420068FA52 /* GerenciadorDeAcoes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GerenciadorDeAcoes.m; sourceTree = "<group>"; };
+		919526881BA4BA9C0068FA52 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		91BB08511B9B1DAD004A32CC /* ListaContatosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListaContatosViewController.h; sourceTree = "<group>"; };
 		91BB08521B9B1DAD004A32CC /* ListaContatosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListaContatosViewController.m; sourceTree = "<group>"; };
 		91C9640D1B92388500C9DC5B /* ContatoDao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContatoDao.h; sourceTree = "<group>"; };
@@ -58,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				919526891BA4BA9C0068FA52 /* MessageUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +80,7 @@
 		917D81411B91EC780094394C = {
 			isa = PBXGroup;
 			children = (
+				919526881BA4BA9C0068FA52 /* MessageUI.framework */,
 				917D814C1B91EC780094394C /* ContatoIP67 */,
 				917D81691B91EC780094394C /* ContatoIP67Tests */,
 				917D814B1B91EC780094394C /* Products */,
@@ -107,6 +114,8 @@
 				917D81771B920A700094394C /* Contato.m */,
 				91BB08511B9B1DAD004A32CC /* ListaContatosViewController.h */,
 				91BB08521B9B1DAD004A32CC /* ListaContatosViewController.m */,
+				919526851BA4A4420068FA52 /* GerenciadorDeAcoes.h */,
+				919526861BA4A4420068FA52 /* GerenciadorDeAcoes.m */,
 			);
 			path = ContatoIP67;
 			sourceTree = "<group>";
@@ -243,6 +252,7 @@
 				917D81501B91EC780094394C /* main.m in Sources */,
 				91C9640F1B92388500C9DC5B /* ContatoDao.m in Sources */,
 				917D81591B91EC780094394C /* FormularioContatoViewController.m in Sources */,
+				919526871BA4A4420068FA52 /* GerenciadorDeAcoes.m in Sources */,
 				917D81561B91EC780094394C /* ContatoIP67.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

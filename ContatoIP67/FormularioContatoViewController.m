@@ -37,8 +37,21 @@ Contato * contato;
 }
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    //Carregar Contato no formulário caso o objeto esteja populado
+    if(self.contato){
+        self.navigationItem.title = @"Alterar";
+        
+        UIBarButtonItem *confirmar = [[UIBarButtonItem alloc] initWithTitle:@"Confirmar" style:UIBarButtonItemStylePlain target:self action:@selector(atualizaContato)];
+        
+        self.navigationItem.rightBarButtonItem = confirmar;
+        
+        self.nome.text = self.contato.nome;
+        self.telefone.text = self.contato.telefone;
+        self.email.text = self.contato.email;
+        self.endereco.text = self.contato.endereco;
+        self.site.text = self.contato.site;
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -51,19 +64,35 @@ Contato * contato;
     [self pegaDadosFormulario];
     [self.contatoDao adicionaContato:self.contato];
     
+    if(self.delegate){
+        [self.delegate contatoAdicionado:contato];
+    }
+    
     [self.navigationController popViewControllerAnimated:YES];
 }
 
 //Resgata dados do formulario para insercao a lista
 - (void)pegaDadosFormulario{
     
-    self.contato = [Contato new];
+    if(!self.contato){
+        self.contato = [Contato new];   
+    }
     
     self.contato.nome     = self.nome.text;
     self.contato.telefone = self.telefone.text;
     self.contato.email    = self.email.text;
     self.contato.endereco = self.endereco.text;
     self.contato.site     = self.site.text;
+}
+
+-(void) atualizaContato{
+    [self pegaDadosFormulario];
+
+    if(self.delegate){
+        [self.delegate contatoAtualizado:contato];
+    }
+    
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end
