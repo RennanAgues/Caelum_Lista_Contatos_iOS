@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "ContatoDao.h"
-
+#import <CoreLocation/CoreLocation.h>
 
 @protocol FormularioContatoViewControllerDelegate <NSObject>
 
@@ -18,7 +18,7 @@
 @end
 
 
-@interface FormularioContatoViewController : UIViewController
+@interface FormularioContatoViewController: UIViewController <UIActionSheetDelegate, UINavigationControllerDelegate,UIImagePickerControllerDelegate>
 
 
 @property (weak, nonatomic) IBOutlet UITextField *nome;
@@ -26,9 +26,21 @@
 @property (weak, nonatomic) IBOutlet UITextField *email;
 @property (weak, nonatomic) IBOutlet UITextField *endereco;
 @property (weak, nonatomic) IBOutlet UITextField *site;
+@property (weak, nonatomic) IBOutlet UIButton    *botaoFoto;
+@property (weak, nonatomic) IBOutlet UITextField *latitude;
+@property (weak, nonatomic) IBOutlet UITextField *longitude;
+
+
+
 
 //Metodo para criacao de um novo contato a partir do formulario
 - (void)criaNovoContato;
+
+//Seleciona a foto
+- (IBAction)selecionaFoto:(id)sender;
+
+//Buscar coordenadas atuais
+- (IBAction)buscarCoordenadas:(id)sender;
 
 //Instancia do dao
 @property (strong) ContatoDao *contatoDao;

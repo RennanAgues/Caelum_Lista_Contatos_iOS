@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface Contato : NSObject
 
@@ -24,5 +25,14 @@
 
 //Endereco de Site do Contato
 @property (strong) NSString * site;
+
+//Foto do contato
+@property (strong) UIImage * foto;
+
+//Foto do contato
+@property (strong) NSNumber * latitude;
+
+//Foto do contato
+@property (strong) NSNumber * longitude;
 
 @end

@@ -14,6 +14,10 @@
 -(id)init{
     self = [super init];
     if(self){
+        UIImage *imagemTabItem = [UIImage imageNamed:@"lista-contatos.png"];
+        UITabBarItem *tabItem = [[UITabBarItem alloc] initWithTitle:@"Contatos" image:imagemTabItem tag:0];
+        self.tabBarItem = tabItem;
+        
         //Nome para titulo da Tela
         self.navigationItem.title = @"Contatos";
         
