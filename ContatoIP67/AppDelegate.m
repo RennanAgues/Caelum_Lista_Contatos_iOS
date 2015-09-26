@@ -25,6 +25,9 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     //Criacao de navigation e referencia a primeira tela que sera acionada
     self.window = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    self.dao = [ContatoDao contatoDaoInstance];
+    
     ListaContatosViewController *lista = [ListaContatosViewController new];
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:lista];
     
@@ -50,6 +53,7 @@
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    [self.dao saveContext];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {

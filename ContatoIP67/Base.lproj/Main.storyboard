@@ -109,7 +109,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uVd-Q4-bMX">
-                                <rect key="frame" x="285" y="195" width="64" height="54"/>
+                                <rect key="frame" x="310" y="211" width="20" height="20"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" none="YES" button="YES" image="YES"/>
@@ -122,6 +122,9 @@
                                     <action selector="buscarCoordenadas:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="2eQ-6h-Nhp"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="fXi-BT-XvO">
+                                <rect key="frame" x="310" y="211" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -132,6 +135,7 @@
                         <outlet property="email" destination="VgY-iM-aV6" id="XQ1-zF-EBV"/>
                         <outlet property="endereco" destination="AjL-aE-WpA" id="aKH-n5-Yoz"/>
                         <outlet property="latitude" destination="MZl-9N-Tq2" id="SLc-rY-ytK"/>
+                        <outlet property="loading" destination="fXi-BT-XvO" id="bm1-It-519"/>
                         <outlet property="longitude" destination="uiv-PX-F75" id="Wqr-pk-yoK"/>
                         <outlet property="nome" destination="axP-VN-mjD" id="AEa-Yp-eXQ"/>
                         <outlet property="site" destination="iI5-Ol-neN" id="bbC-fO-Zel"/>

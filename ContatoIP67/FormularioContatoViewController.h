@@ -29,6 +29,7 @@
 @property (weak, nonatomic) IBOutlet UIButton    *botaoFoto;
 @property (weak, nonatomic) IBOutlet UITextField *latitude;
 @property (weak, nonatomic) IBOutlet UITextField *longitude;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loading;
 
 
 

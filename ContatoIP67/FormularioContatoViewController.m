@@ -82,7 +82,7 @@ Contato * contato;
 - (void)pegaDadosFormulario{
     
     if(!self.contato){
-        self.contato = [Contato new];   
+        self.contato = [self.contatoDao novoContato];
     }
     
     if([self.botaoFoto backgroundImageForState:UIControlStateNormal]){
@@ -95,7 +95,7 @@ Contato * contato;
     self.contato.endereco   = self.endereco.text;
     self.contato.site       = self.site.text;
     self.contato.latitude   = [NSNumber numberWithFloat:[self.latitude.text floatValue]];
-    self.contato.longitude   = [NSNumber numberWithFloat:[self.longitude.text floatValue]];
+    self.contato.longitude  = [NSNumber numberWithFloat:[self.longitude.text floatValue]];
 }
 
 -(void) atualizaContato{
@@ -121,7 +121,10 @@ Contato * contato;
     }
 }
 
-- (IBAction)buscarCoordenadas:(id)sender {
+- (IBAction)buscarCoordenadas:(UIButton *)botao {
+    [self.loading startAnimating];
+    botao.hidden = YES;
+    
     CLGeocoder * geocoder = [CLGeocoder new];
     [geocoder geocodeAddressString:self.endereco.text completionHandler:^(NSArray *resultados, NSError *error) {
         if(error == nil && [resultados count] > 0){
@@ -130,7 +133,11 @@ Contato * contato;
             self.latitude.text = [NSString stringWithFormat:@"%f",coordenada.latitude];
             self.longitude.text = [NSString stringWithFormat:@"%f",coordenada.longitude];
             
+        }else{
+            NSLog(@"ERRO %@", error);
         }
+        [self.loading stopAnimating];
+        botao.hidden = NO;
     }];
 }
 

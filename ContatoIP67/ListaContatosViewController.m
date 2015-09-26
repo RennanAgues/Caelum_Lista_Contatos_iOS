@@ -115,7 +115,7 @@
 //Sobrescrita do metodo de edicao
 -(void) tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
     if(editingStyle == UITableViewCellEditingStyleDelete){
-        [self.dao removeContato:indexPath.row];
+        [self.dao removeContatoDaPosicao:indexPath.row];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }
 }

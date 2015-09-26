@@ -8,8 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
+#import <CoreData/CoreData.h>
 
-@interface Contato : NSObject
+@interface Contato : NSManagedObject <MKAnnotation>
 
 //Nome do Contato
 @property (strong) NSString * nome;
@@ -29,10 +31,10 @@
 //Foto do contato
 @property (strong) UIImage * foto;
 
-//Foto do contato
+//
 @property (strong) NSNumber * latitude;
 
-//Foto do contato
+//
 @property (strong) NSNumber * longitude;
 
 @end
